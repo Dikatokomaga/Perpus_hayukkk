@@ -98,8 +98,8 @@ class AnggotaController extends Controller
     public function destroy( $id)
     {
         $anggota = Anggota::find($id);
-        $anggota->destroy();
+        $anggota->destroy($id);
 
-        return redirect('anggota')->with('adios','Data Adios njir');
+        return redirect('anggota')->with('adios', 'Data berhasil di hapus');
     }
 }
