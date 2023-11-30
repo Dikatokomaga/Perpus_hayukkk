@@ -33,7 +33,7 @@
                                 @foreach($kategori as $k)
                                 <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$k->kode}}</td>
+                                <td>{!! DNS1D::getBarcodeHTML('$' .$k->kode, 'C39+',1,25)!!}</td>
                                 <td>{{$k->nama}}</td>
                                 <td>
                                     <form action="/kategori/{{$k->id}}" method="GET" id="delete-form">

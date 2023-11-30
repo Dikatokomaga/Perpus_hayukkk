@@ -30,9 +30,8 @@
               </li>
 
             <li class="">
-              <a href="#" class="nav-link "><i class="fas fa-book-open"></i><span>Buku</span></a>
+              <a href="/buku" class="nav-link "><i class="fas fa-book-open"></i><span>Buku</span></a>
               </li>
-
               <li class="menu-header">Transaksi</li>
 
               <li class="">

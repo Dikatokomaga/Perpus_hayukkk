@@ -6,6 +6,7 @@ use App\Http\Controllers\PenerbitController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,7 @@ Route::get('/login ',[AuthController::class,'login'])->name('login');
 
 
 
-
+Route::resource('/buku',BukuController::class);
 
 
 
@@ -51,10 +52,10 @@ Route::get('/penerbit/{id} ',[PenerbitController::class,'destroy']);
 
 
 Route::resource('/anggota',AnggotaController::class);
-Route::get('/anggota/{id}', [AnggotaController::class, 'destroy']);
-Route::get('/anggotat/{id}/edit ',[AnggotatController::class,'edit']);
-Route::put('/anggotat/{id} ',[AnggotatController::class,'update']);
-Route::post('/anggotat/store',[AnggotatController::class,'store']);
+// Route::get('/anggota/{id}', [AnggotaController::class, 'destroy']);
+// Route::get('/anggotat/{id}/edit ',[AnggotatController::class,'edit']);
+// Route::put('/anggotat/{id} ',[AnggotatController::class,'update']);
+// Route::post('/anggotat/store',[AnggotatController::class,'store']);
 
 Route::group(['middleware'=> 'auth'], function(){
     Route::get('/dashboard ',[DashboardController::class,'index']);

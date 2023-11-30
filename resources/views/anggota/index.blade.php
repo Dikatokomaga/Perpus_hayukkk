@@ -34,20 +34,21 @@
                     @foreach($anggota as $ag)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$ag->kode}}</td>
+                            <td>{!! DNS1D::getBarcodeHTML('$' .$ag->kode, 'C39+',1,25)!!}</td>
                             <td>{{$ag->nama}}</td>
                            
                             <td>{{$ag->telpon}}</td>
                             <td>{{$ag->alamat}}</td>
                             <td><img src="{{asset('/storage/anggota/'.$ag->foto)}}" class="rounded" style="width: 50px"></td>
                             <td>
-                                    <form action="/anggota/{{$ag->id}}" method="GET"  id="delete-form">
+                                    <form action="/buku/{{$ag->id}}" method="POST"  id="formId{{$ag->id}}">
                                         @method('delete')
-                                        <button class="btn btn-sm btn-danger fa fa-frog" onclick="confirmDelete()">  </button>
+                                        @csrf
                                         <a href="{{route('anggota.edit',$ag->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                        <button class="btn btn-sm btn-danger fa fa-frog" onclick="confirmDelete('delete-form{{$ag->id}}')"></button>
                                     </form>
                                 </td>
-                           
+      
                            
                         </tr>
                     </tbody>

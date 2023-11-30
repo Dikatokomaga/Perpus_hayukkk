@@ -33,7 +33,7 @@
                                 @foreach($penerbit as $p)
                                 <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$p->kode}}</td>
+                                <td>{!! DNS1D::getBarcodeHTML('$' .$p->kode, 'C39+',1,25)!!}</td>
                                 <td>{{$p->nama}}</td>
                                 <td>
                                     <form action="/penerbit/{{$p->id}}" method="GET"  id="delete-form">
